@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Twitter Feed</title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+	<link href="{% static 'css/main.css' %}" rel="stylesheet">
+	<link href="{% static 'css/animate.css' %}" rel="stylesheet">
+	<link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+	    <script src="{% static 'js/html5shiv.js' %}"></script>
+	    <script src="{% static 'js/respond.min.js' %}"></script>
+    <![endif]-->       
+   </head><!--/head-->
+
+<body>
+	<header id="header" role="banner">		
+		<div class="main-nav">
+			<div class="container">
+				<div class="header-top">
+					<div class="pull-right social-icons">
+
+					</div>
+				</div>
+		        <div class="row">	        		
+
+
+		        </div>
+	        </div>
+        </div>                    
+    </header>
+    <!--/#header--> 
+
+
+
+
+	
+	<section id="twitter">
+		<div id="twitter-feed" class="carousel slide" data-interval="false">
+			<div class="twit">
+				<img class="img-responsive" src="{% static 'images/twit.png' %}" alt="twit">
+			</div>
+			<div class="row">
+				<div class="col-sm-4 col-sm-offset-3">
+
+					<div class="text-center carousel-inner center-block">
+						<div class="item active" style="">
+                            <div class="col-sm-6">
+						<div id="contact-section">
+                            {% csrf_token %}
+							<h3 style="color:#F7AB24">Enter a Nickname</h3>
+
+
+					            <div class="form-group">
+					                <input type="text" id="name" name="name" class="form-control" required="required" placeholder="NickName">
+					            </div>
+
+					            <div class="form-group" style="text-align:center">
+					                <button type="submit" id="submit_bt" class="btn btn-primary pull-right">Get Tweets</button>
+					            </div>
+                                <p id="msg" style="display:none"> Please Wait...</p>
+					    </div>
+					</div>
+						</div>
+
+					</div>
+
+                </div>
+                <div class="col-sm-4">
+
+					<div class="text-center carousel-inner center-block">
+						<div class="item active" style="color: rgb(77, 52, 9);">
+                            <ul class="tweets">
+
+                            </ul>
+						</div>
+
+					</div>
+
+                </div>
+			</div>
+		</div>		
+	</section><!--/#twitter-feed-->
+	
+
+
+
+<footer id="footer">
+        <div class="container">
+            <div class="text-center">
+                <a style="padding: 10px;" href="https://twitter.com/O_osharawyo_O"><i class="fa fa-twitter"></i></a>
+                <a style="padding: 10px;" href="https://www.facebook.com/abdalrahman.sharawy"><i class="fa fa-facebook"></i></a>
+                <a style="padding: 10px;" href="https://plus.google.com/+AbdoAlsharawy/posts"><i class="fa fa-google-plus"></i></a>
+                <p style="color:black"> Copyright  &copy;2015<a target="_blank" href=""> Twitter feed </a><br> <br> Designed by <a target="_blank" href="">Sharawy</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!--/#footer-->
+  
+    <script type="text/javascript" src="{% static 'js/jquery.js'%}"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
