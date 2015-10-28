@@ -12,7 +12,7 @@ twitter==1.17.1<br>
 wsgiref==0.1.2<br>
 <br><br>
  4 importants files:<br>
- templates/home.html   // conatin the ui form where you enter the username and display the tweets <br>
+ templates/home.html   // conatin the ui form where you enter the username and display the tweets (evento free template) <br>
  static/js/main.js   // collecting data from user and send ajax request and wait for server replay <br>
  twitterfeed/urls.py   // direct the user to home page and handle ajax request <br>
  feed/views.py   /// returning home view and processes the ajax request  <br>
