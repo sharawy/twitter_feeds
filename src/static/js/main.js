@@ -27,10 +27,11 @@ jQuery(function($) {'use strict',
                         success : function(data) {
                             if(data.length>0){
                             $.each(data, function( index, value ) {
-                                html+="<li>"+value['text']+"</li>";
-
+                                obj={"id":value['id'],"text":value['text']};
+                                html+="<li>"+JSON.stringify(obj,null,"  ")+"</li>";
+                                //console.log(JSON.stringify(obj,null,"/t"));
                             });
-                            console.log(html);
+                          // console.log(JSON.stringify(data,null,"/t"));
 
                             $(".tweets").html("");
                             $(".tweets").append(html);
