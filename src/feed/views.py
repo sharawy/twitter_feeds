@@ -1,14 +1,9 @@
 from django.shortcuts import render
 from django.http import *
 from twitter import *
+from twitterfeed import settings
 import json
-# Create your views here.
 
-#twitter app config
-consumer_key = "iSyU15L2TdWpV9wk0zZUTZTg6"
-consumer_secret = "ytpM49Xf0OkR36nEYqBIypY0pFJOXiAfCyQYlIEznfSXaCzfkO"
-access_key = "248807542-TafarFd7nluXlj8Eg5maPnw7EgjZ1HO2a5g5GKx0"
-access_secret = "4pbBZSW8Cfi6ASs5Cks6HPakAz82ceEMyMs4YPgDwp5D0"
 
 def home(request):
     return  render(request,"home.html",{})
@@ -16,7 +11,7 @@ def home(request):
 def getfeed(request):
     #create initiate twitter api
     twitter = Twitter(format="json",
-		auth = OAuth(access_key, access_secret, consumer_key, consumer_secret))
+		auth = OAuth(settings.access_key, settings.access_secret, settings.consumer_key, settings.consumer_secret))
     #getting nick name
     user = request.GET['name']
     #get last 5 tweets
